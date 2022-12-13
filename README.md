@@ -17,6 +17,6 @@ Estos archivos CSV de presencia del registro de presencia de especies se pueden 
 
 ##### Resultado final 
 
-En el siguiente enlace se puede apreciar el trabajo llevado a cabo publicado en [Streamlit Cloud](https://09steveng-final-prin-nlv5y5.streamlit.app/).
+En el siguiente enlace lo dirige al resultado final con la aplicación de consulta en [Streamlit Cloud](https://09steveng-final-prin-nlv5y5.streamlit.app/).
 
 
