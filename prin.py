@@ -34,3 +34,19 @@ st.markdown('La aplicación muestra un conjunto de tablas, gráficos y mapas cor
 
 
 # ENTRADAS
+
+# Carga de datos
+archivo_registros_presencia = st.sidebar.file_uploader('Seleccione un archivo CSV que siga el estándar DwC')
+
+# Se continúa con el procesamiento solo si hay un archivo de datos cargado
+if archivo_registros_presencia is not None:
+# Carga de registros de presencia en un dataframe
+    registros_presencia = pd.read_csv(archivo_registros_presencia, delimiter='\t')
+# Conversión del dataframe de registros de presencia a geodataframe
+    registros_presencia = gpd.GeoDataFrame(registros_presencia, 
+                                           geometry=gpd.points_from_xy(registros_presencia.decimalLongitude, 
+                                                                       registros_presencia.decimalLatitude),
+                                           crs='EPSG:4326')
+
+# Carga de polígonos de cantones
+    cantones = gpd.read_file("datos/Cantones.geojson")
